@@ -47,41 +47,26 @@ Si no se encuentra, entonces ejecutamos el siguiente comando para instalarlo, es
 <p align="justify">
 Si está instalado entonces abrimos un editor de texto y creamos un archivo llamado catalogs.sql donde escribiremos los comandos para crear las tablas de ejemplo y los Store Procedures para administrar los registros de cada una de las tablas.
 </p>
-Para la creación de las tablas escribimos lo siguiente:
-<img src="images/201014.png">
 <p align="justify">
 En acuerdo con la llave foránea definida en cada tabla, debe existir un país para poder crear un estado, así mismo debe de existir un estado para poder crear una ciudad, entonces creamos unos registros en la tabla países
 </p>
-<img src="images/201014_insert.png">
-<b>Fig 3. Insertando los registros en la tabla</b>
+<b>Fig 3. Insertando los registros en la tabla</b><br/>
 <img src="images/img3.png">
 <p align="justify">
 Supongamos que estas tablas van a utilizarse en un sistema donde sea obligatorio que los nombres de país, estado y ciudad, se almacenen teniendo la primera letra mayúscula o en notación Camel Case,(en este caso los países quedaron guardados con letras minúsculas de manera intencional, con el fin de mostrar un Store Procedure).
-
-Creamos entonces una función para aplicar esta regla a los datos de la tabla countries.
-
-La función se define con el siguiente código:
-</p>
-<img src="images/UpperCamelCase.png">
 <p>
-Lo aplicamos de la siguiente manera para actualizar los registros.
+Aplicamos la función UpperCamelCase de la siguiente manera para actualizar los registros.
 </p>
 <b>Fig 4. Actualizando los registros utilizando la función UpperCamelCase</b>
 <img src="images/img4.png">
 <p>
 Una vez creada en el servidor se encuentra disponible para cualquier transformación que queramos aplicar sobre cualquier cadena.
 </p>
-<b>Fig 5. Ejecutando la función UpperCamelCase</b>
+<b>Fig 5. Ejecutando la función UpperCamelCase</b><br/>
 <img src="images/img5.png">
 <p>
-Ahora escribiremos las funciones para insertar registros en cada una de las tablas.
+Ahora escribiremos las funciones InsertState y InsertCity para insertar registros en cada una de las tablas.
 </p>
-<div>
-<img src="images/InsertState.png">
-</div>
-<div>
-<img src="images/InsertCity.png">
-</div>
 <p>
 Básicamente la estructura de un Store Procedure es la siguiente:
 </p>
